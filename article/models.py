@@ -16,7 +16,7 @@ class Article(models.Model): # article modeli oluşturmayı deniycez
     author = models.ForeignKey("auth.User",on_delete = models.CASCADE , verbose_name= " Yazar ") # bu alan aslında user tablosuna işaretle # o tablonun user ı buraya gelecek
                                                                         # eğer user silinirse user a ait herşey silinecek
 
-    title = models.CharField(max_length=50,verbose_name="Başlık" ,  unique = True)  # max uzunluğu 50 olacakk    
+    title = models.CharField(max_length=50,verbose_name="Başlık" )  # max uzunluğu 50 olacakk    
     content = RichTextField()
     created_date = models.DateTimeField(auto_now_add=True,verbose_name="Oluşturulma tarihi") # tarihi otomatik alması gerek                                                                
                                          # verbose_name = yazıyı türkçe karşılığını yazarsın
