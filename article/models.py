@@ -37,7 +37,7 @@ class Comment(models.Model):
 
     # bağlantıyı kurduk
 
-    comment_author = models.CharField(max_length = 50,verbose_name="isim", unique = True) # {{request.user.username}} request.user
+    comment_author = models.CharField(max_length = 50,verbose_name="isim") # {{request.user.username}} request.user
     comment_content = models.CharField(max_length=200,verbose_name="yorum")
     comment_date = models.DateTimeField(auto_now_add=True)
 
