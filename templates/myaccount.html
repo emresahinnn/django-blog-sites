@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Hesabım</h3>
+<hr>
+<p>
+    Hoşgeldiniz , <small>{{request.user.username}}</small>
+</p>
+<hr>
+<a class = "btn btn-danger" href = " {%  url 'article:updatepassword'  %} ">şifre güncelle</a>
+
+<hr>
+
+
+
+{% endblock body %}

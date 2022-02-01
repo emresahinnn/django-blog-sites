@@ -1,0 +1,82 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <a class="navbar-brand" href="{% url 'index' %}">YB blok</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'about' %}"> Hakkımızda </a>          
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'article:articles' %}"> Makaleler </a>
+          </li>                               <!-- article altındaki articlesa gir/ bak diyoruz       -->
+
+
+          
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+
+        {% if request.user.is_authenticated %} <!-- eğer giriş yapılmışsa  kontrol panelini ve çıkış yapı göster -->
+
+            <li class="nav-item active">
+              <a class="nav-link" href=#> Giriş Yapıldı </a>
+            </li> 
+
+            <li class="nav-item active">
+              <a class="nav-link" href=#>              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'article:mypage' %}" >  Hesabım        </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href=#>              </a>
+            </li>
+
+
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'article:dashboard' %}"> Kontrol Paneli </a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'user:logout' %}"> Çıkış Yap </a>
+            </li>
+
+            
+          
+        
+        {% else %} <!-- eğer giriş yapılmamışsa  giriş yapı göster -->
+
+          <li class="nav-item active">
+              <a class="nav-link" href=#> Giriş Yapılmadı </a>
+            </li> 
+
+            <li class="nav-item active">
+              <a class="nav-link" href=#>              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href=#>              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href=#>              </a>
+            </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'user:login' %}"> Giriş Yap </a>
+          </li>
+
+        {% endif %}
+
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'user:register' %}"> Kayıt Ol </a>
+          </li>
+
+
+        </ul>
+      </div>
+
+
+    </nav>
